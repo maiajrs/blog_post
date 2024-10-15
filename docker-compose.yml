@@ -1,0 +1,14 @@
+volumes: 
+  data_dev:
+  shared_data:
+
+services:
+  db:
+    image: postgres:12-bullseye
+    container_name: db_blog_post
+    volumes:
+      - data_dev:/var/lib/postgresql/data
+      - shared_data:/var/shared
+    env_file: .env
+    ports: 
+      - "5432:5432"
