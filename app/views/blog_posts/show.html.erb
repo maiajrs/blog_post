@@ -1,0 +1,8 @@
+<h1>My Blog Post</h1>
+<h4>Titulo: <%= @blog_post.title%></h4>
+<div>
+  <p><span style="font-weight: bold;">Texto: </span> <%= @blog_post.body %></p>
+</div>
+<div>
+  <%= link_to "Editar Post", edit_blog_post_path(@blog_post) if user_signed_in? %>
+</div>
